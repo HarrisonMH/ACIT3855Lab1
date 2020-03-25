@@ -5,7 +5,7 @@
 # Author: Matt Harrison, Set 4B, A00875065
 
 import connexion
-import requests
+#import requests
 from connexion import NoContent
 import json
 import yaml
