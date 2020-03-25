@@ -1,0 +1,80 @@
+openapi: 3.0.0
+# Added by API Auto Mocking Plugin
+servers:
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/Team-Bigness/FoodDelivery/1.0.0
+info:
+  description: This is an API for a food order reciever
+  version: "1.0.0"
+  title: Food Order API
+  contact:
+    email: mharrison62@my.bcit.ca
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+paths:
+  /order/pickup:
+    post:
+      summary: Submit an order for pickup
+      operationId: app.order_pickup
+      description: Processes an order for food pickup
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object 
+              required:
+                - restaurant_id
+                - user_id
+                - order_details
+                - order_time
+              properties:
+                restaurant_id:
+                  type: string
+                user_id:
+                  type: string
+                order_details:
+                  type: object
+                order_time:
+                  type: string
+                pickup_time:
+                  type: string
+      responses:
+        '200':
+          description: Order submitted successfully
+        '400':
+          description: Invalid request
+  
+  /order/delivery:
+    post:
+      summary: Submit an order for delivery
+      operationId: app.order_delivery
+      description: Processes an order for food delivery
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - restaurant_id
+                - user_id
+                - order_details
+                - order_time
+              properties:
+                restaurant_id:
+                  type: string
+                user_id:
+                  type: string
+                order_details:
+                  type: object
+                order_time:
+                  type: string
+                delivery_time:
+                  type: string
+      responses:
+        '200':
+          description: Order submitted successfully
+        '400':
+          description: Invalid request
