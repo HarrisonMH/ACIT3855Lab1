@@ -1,2 +1,2 @@
-connexion==2.5.1
+connexion==2.5.0
 pykafka==2.8.0
